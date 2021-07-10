@@ -1,0 +1,6 @@
+module Pods_OneCityCenter {
+  umbrella header "Pods-OneCityCenter-umbrella.h"
+
+  export *
+  module * { export * }
+}
