@@ -55,7 +55,7 @@ export default class AppNavigator extends React.Component {
 
 
 
-// import React from 'react';
+// // import React from 'react';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createStackNavigator, } from '@react-navigation/stack';
 // // import SplashScreen from "react-native-splash-screen";

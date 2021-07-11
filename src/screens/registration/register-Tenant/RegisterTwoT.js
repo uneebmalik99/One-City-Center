@@ -14,18 +14,18 @@ import bg2 from "../../../assets/images/splash2.png"
 //import DropDownPicker from 'react-native-dropdown-picker';
 import {Picker} from '@react-native-picker/picker';
 import CheckBox from '@react-native-community/checkbox';
-import SelectDropdown from 'react-native-select-dropdown'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import SelectDropdown from 'react-native-select-dropdown'
 
 
 
 
-const RegisterThree =   ({navigation}) => {
 
-  const countries = ["One City Center1", "Mobile Access"]
+const RegisterTwoT =  ({navigation}) => {
+    const countries = ["One City Center1", "Mobile Access"]
 
-  const [toggleCheckBox, setToggleCheckBox] = useState(false)
-
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleCheckBox1, setToggleCheckBox1] = useState(false)
 
     const [selectedValue, setSelectedValue] = useState("One City Center1");
     const [open, setOpen] = useState(false);
@@ -44,8 +44,12 @@ const RegisterThree =   ({navigation}) => {
 <View style={styles.regView}>
     <Text  style={styles.regText}>Registration</Text>
   </View>
- 
   <View style={styles.regBtnVw}>
+
+  <Text style={styles.regBtnTxt}>Mobile Number</Text>   
+   <TextInput style={styles.regBtn}></TextInput>
+
+
   <Text style={styles.regBtnTxt}>Building</Text>   
   {/* <DropDownPicker
       open={open}
@@ -56,8 +60,7 @@ const RegisterThree =   ({navigation}) => {
       setItems={setItems}
       onPress={() => pickerOpen()}
     /> */}
-
-<SelectDropdown
+  <SelectDropdown
 	data={countries}
   buttonStyle={{backgroundColor:'#0001',borderWidth:1,borderColor:'#7f7f7f'  ,borderRadius:10,width:'100%'}}
   buttonTextStyle={styles.head_text}
@@ -86,17 +89,6 @@ const RegisterThree =   ({navigation}) => {
 		return item
 	}}
 />
-    {/* <Picker
-
-     style={styles.pick}
-  selectedValue={selectedValue}
-  onValueChange={(itemValue, itemIndex) =>
-    setSelectedValue(itemValue)
-  }>
-  <Picker.Item label="One City Center1" value="java" />
-  <Picker.Item label="JavaScript" value="js" />
-</Picker> */}
-
 
 <View style={styles.chkCont}>
 <CheckBox
@@ -151,11 +143,6 @@ const styles = StyleSheet.create({
     width: '100%',
 
   },
-  head_text:{
-    color:'white',
-    fontSize:20,
-    fontWeight:'600'
-   },
   image: {
     flex: 1,
     justifyContent: "center"
@@ -172,35 +159,41 @@ const styles = StyleSheet.create({
 
   },
   regBtnVw:{
-    paddingTop:10,
+    paddingTop:5,
     marginHorizontal:30,
 
   },
   regBtnTxt:{
     fontSize:20,
     color:'white',
-    alignSelf:'center',
-    fontWeight:'500',
-    textAlign:'center',
-    marginBottom:5,
+    fontWeight:'600',
+    textAlign:'center'
 
   },
   regBtn:{
-    borderColor:'white',
+    borderColor:'#7f7f7f',
     borderWidth:1,
     borderRadius:7,
     height:50,
+    marginTop:5,
+    color:'white',
     marginBottom:10,
   },
   regBtnNxtCont:{
+    
       marginTop:50,
 marginHorizontal:85,
   },
+  head_text:{
+    color:'white',
+    fontSize:20,
+    fontWeight:'600'
+   },
 regBtnNxt:{
     backgroundColor:'grey',
     borderColor:'grey',
     borderWidth:1,
-    borderRadius:7,
+    borderRadius:9,
     height:40,
     justifyContent:'center',
     marginBottom:10,
@@ -212,33 +205,33 @@ borderRadius:9,
 borderWidth:1,
 
 },
-  chkCont:{
-      alignItems:'flex-start',
-  flexDirection:'row',
-  marginTop:20
-  
-      
-      },
-  chkBx:{
-  
-  color:'white'
-      
-  },
-  chkTxt:{
-  alignSelf:'center',
-  color:'white',
-  textDecorationLine: 'underline' 
-          
-      },
-      mandText:{
-        marginTop:25,
-    marginLeft:28,
-    color:'white',
-    textDecorationLine: 'underline' 
-                    
+chkCont:{
+    alignItems:'flex-start',
+flexDirection:'row',
+marginTop:15
+
+    
     },
+chkBx:{
+
+color:'white'
+    
+},
+chkTxt:{
+alignSelf:'center',
+color:'white',
+textDecorationLine: 'underline' 
+        
+    },
+mandText:{
+    marginTop:20,
+marginLeft:28,
+color:'white',
+textDecorationLine: 'underline' 
+                
+},
 
 }
 );
 
-export default RegisterThree;
+export default RegisterTwoT;

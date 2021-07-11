@@ -7,40 +7,38 @@ import {
   TextInput,
   ImageBackground,
   TouchableOpacity,
-  Image,
 } from 'react-native';
 //import {deviceHeight, deviceWidth} from '../../constance/AppConstance';
-import bg2 from "../../assets/images/splash2.png"
-import building from "../../assets/images/building.jpeg"
+import bg2 from "../../../assets/images/splash2.png"
 
 
 
-const RegisterActivation  = ({navigation}) => {
+
+const RegisterOneT = ({navigation})  => {
   return (
 <SafeAreaView style={styles.container}>
 <ImageBackground source={bg2} resizeMode="cover" style={styles.image}>
 <View style={styles.regView}>
     <Text  style={styles.regText}>Registration</Text>
   </View>
-  <Image source={building} style={styles.tick}></Image>
-
   <View style={styles.regBtnVw}>
-  <Text style={styles.regTxt}>A vaildation link has been sent to this email</Text>   
+  <Text style={styles.regBtnTxt}>First Name</Text>   
    <TextInput style={styles.regBtn}></TextInput>
-   <Text style={styles.regTxt}>Please check your email for the link to Validate your email address in order to complete your registration</Text>   
 
+   <Text style={styles.regBtnTxt}>Last Name</Text>   
+   <TextInput style={styles.regBtn}></TextInput>
+
+   <Text style={styles.regBtnTxt}>Email Address</Text>   
+   <TextInput style={styles.regBtn}></TextInput>
+
+   <Text style={styles.regBtnTxt}>Mobile Number</Text>   
+   <TextInput style={styles.regBtn}></TextInput>
 
 <View style={styles.regBtnNxtCont}>
-   <TouchableOpacity style={styles.regBtnNxt}>
-        <Text style={styles.regBtnTxt}>Resend validation email</Text>
-    </TouchableOpacity>
-    </View>
-
-    <View style={styles.regBtnNxtCont}>
-   <TouchableOpacity 
-    onPress={()=> {navigation.navigate('HomeScreen')}}
+   <TouchableOpacity
+   onPress={()=> {navigation.navigate('RegisterTwoT')}}
    style={styles.regBtnNxt}>
-        <Text style={styles.regBtnTxt}>Email Validated</Text>
+        <Text style={styles.regBtnTxt}>Next</Text>
     </TouchableOpacity>
     </View>
 
@@ -76,14 +74,8 @@ const styles = StyleSheet.create({
   },
   regBtnVw:{
     paddingTop:5,
+    marginTop:5,
     marginHorizontal:30,
-
-  },
-  regTxt:{
-    fontSize:20,
-    color:'white',
-    marginLeft:8,
- paddingBottom:10
 
   },
   regBtnTxt:{
@@ -96,13 +88,14 @@ const styles = StyleSheet.create({
   regBtn:{
     borderColor:'white',
     borderWidth:1,
-    backgroundColor:'white',
     borderRadius:7,
-    height:43,
+    marginTop:2,
+    height:50,
     marginBottom:10,
   },
   regBtnNxtCont:{
-marginHorizontal:0,
+marginHorizontal:85,
+marginTop:10,
   },
 regBtnNxt:{
     backgroundColor:'grey',
@@ -110,19 +103,11 @@ regBtnNxt:{
     borderWidth:1,
     borderRadius:9,
     height:40,
+    justifyContent:'center',
     marginBottom:10,
-    marginTop:5,
-    justifyContent:'center'
   },
-  tick: {
-      alignItems:'center',
-    height:100,
-    width:50,
-    justifyContent: "center",
-    alignSelf:'center',
-    marginTop:25,
-  },
+
 }
 );
 
-export default RegisterActivation;
+export default RegisterOneT;
