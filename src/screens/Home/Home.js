@@ -155,7 +155,6 @@ regText4:{
 regBtnVw:{
   paddingTop:5,
   marginHorizontal:20,
-
 },
 regIconVw:{
 flexDirection:'row',

@@ -20,7 +20,6 @@
    TouchableOpacity,
    ImageBackground,
  } from 'react-native';
- 
  import AppConstance, {
   deviceHeight,
   deviceWidth,

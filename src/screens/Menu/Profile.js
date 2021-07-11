@@ -56,7 +56,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
               <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
               <MaterialCommunityIcons color='#BDBDBD' name='qrcode-scan' size={35} style={{alignSelf:'center'}} />
               <Image style={{height:38, alignSelf:'center', width:38}} source={require('../../assets/icons/cellphone-wireless.png')} />
-             
+     
               </View>
 
                 <Text style={[styles.bodyitem_inner_text,{color:'#BDBDBD'}]}>Access(QR / Mobile)</Text>
@@ -68,8 +68,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
           underlayColor="#ff9933"
           onPress={()=> {navigation.navigate('AccountInformation')}}
           style={styles.box}>
-            
-
           <View style={styles.bodyitem_inner}>
                 <MaterialCommunityIcons color='#BDBDBD' name='account-details' size={50} />
 

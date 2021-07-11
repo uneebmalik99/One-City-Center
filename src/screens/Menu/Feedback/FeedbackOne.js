@@ -49,7 +49,6 @@ import * as Progress from 'react-native-progress';
   <ScrollView style={styles.innercontainer1}>
       
    <View style={styles.head}>
-      
       <Text style={styles.head_text}>My Profile</Text>
 
    </View>

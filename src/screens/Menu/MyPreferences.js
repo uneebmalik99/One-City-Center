@@ -19,7 +19,6 @@
    ImageBackground,
    TextInput,
  } from 'react-native';
- 
  import AppConstance, {
   deviceHeight,
   deviceWidth,

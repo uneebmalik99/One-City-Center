@@ -216,8 +216,7 @@ borderWidth:1,
       alignItems:'flex-start',
   flexDirection:'row',
   marginTop:20
-  
-      
+    
       },
   chkBx:{
   

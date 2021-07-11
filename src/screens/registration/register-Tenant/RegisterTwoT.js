@@ -20,7 +20,6 @@ import SelectDropdown from 'react-native-select-dropdown'
 
 
 
-
 const RegisterTwoT =  ({navigation}) => {
     const countries = ["One City Center1", "Mobile Access"]
 

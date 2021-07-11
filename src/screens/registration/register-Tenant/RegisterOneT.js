@@ -41,7 +41,6 @@ const RegisterOneT = ({navigation})  => {
         <Text style={styles.regBtnTxt}>Next</Text>
     </TouchableOpacity>
     </View>
-
   </View>
 </ImageBackground>
   

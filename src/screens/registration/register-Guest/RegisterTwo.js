@@ -13,7 +13,6 @@ import bg2 from "../../../assets/images/splash2.png"
 
 
 
-
 const RegisterTwo = ({navigation})  => {
   return (
 <SafeAreaView style={styles.container}>

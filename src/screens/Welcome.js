@@ -47,7 +47,6 @@
               <Text style={[styles.txt,{fontWeight:'500',fontSize:18,  }]}> GUEST ACCESS</Text>
               
               </TouchableOpacity>
-
             <TouchableOpacity
                   onPress={()=> {navigation.navigate('RegisterOneT')}}
 

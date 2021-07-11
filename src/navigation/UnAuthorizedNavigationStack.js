@@ -191,7 +191,6 @@ const MenuStack =() =>{
 <Stack.Screen name='MenuScreen' component={MenuScreen}
 options={{
   headerShown:false,
-  
 }} 
  />
 

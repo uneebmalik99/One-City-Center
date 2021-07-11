@@ -21,7 +21,6 @@
    TouchableHighlight,
  } from 'react-native';
  import SelectDropdown from 'react-native-select-dropdown'
-
  import AppConstance, {
   deviceHeight,
   deviceWidth,

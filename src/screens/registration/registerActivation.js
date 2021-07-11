@@ -14,7 +14,6 @@ import bg2 from "../../assets/images/splash2.png"
 import building from "../../assets/images/building.jpeg"
 
 
-
 const RegisterActivation  = ({navigation}) => {
   return (
 <SafeAreaView style={styles.container}>
