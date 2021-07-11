@@ -1,0 +1,14 @@
+com/onecitycenter/MainApplication.java
+ com.onecitycenter.MainApplication
+ com.onecitycenter.MainApplication$1
+com/onecitycenter/ReactNativeFlipper.java
+ com.onecitycenter.ReactNativeFlipper
+ com.onecitycenter.ReactNativeFlipper$1
+ com.onecitycenter.ReactNativeFlipper$2
+ com.onecitycenter.ReactNativeFlipper$2$1
+com/onecitycenter/BuildConfig.java
+ com.onecitycenter.BuildConfig
+com/onecitycenter/MainActivity.java
+ com.onecitycenter.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
