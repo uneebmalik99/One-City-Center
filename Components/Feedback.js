@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from 'react';
-import { View, Text, StyleSheet, Button, TextInput} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const FirstFeedback = () => {
@@ -60,8 +60,8 @@ const FirstFeedback = () => {
                 <View style={styles.feedbackContainer}>
 
                     {/* <Text style={{ margin: 10 }}>Write here</Text> */}
-                    <TextInput 
-                        placeholder="Write your Feedback here" 
+                    <TextInput
+                        placeholder="Write your Feedback here"
                         style={{ margin: 10 }}
                     ></TextInput>
 
@@ -71,18 +71,24 @@ const FirstFeedback = () => {
                 {/* Button Container */}
                 <View style={{ margin: 10 }}>
 
-                    <Button
-                        title="Submit"
-                    //  onPress={} 
-                    />
+                    {/* TouchableOpacity / Button */}
+                    <TouchableOpacity
+                        style={styles.TouchableOpacity}
+                        onPress={() => console.log("button Pressed")}
+                    >
+
+                        <Text style={{ color: 'white' }}>Submit</Text>
+
+                    </TouchableOpacity>
 
                 {/* button container ends here */}
                 </View>
 
-            {/* body container ends here */}
+
+                {/* body container ends here */}
             </View>
 
-        {/* parent container ended */}
+            {/* parent container ended */}
         </View>
     );
 };
@@ -91,7 +97,6 @@ const styles = StyleSheet.create({
     parent: {
         flex: 1,
         marginTop: 55,
-        // marginBottom: 25,
         marginLeft: 15,
         marginRight: 15,
         justifyContent: 'center',
@@ -149,6 +154,15 @@ const styles = StyleSheet.create({
         height: 250,
         width: 275,
     },
+    TouchableOpacity: {
+        borderRadius: 5,
+        borderWidth: 1,
+        height: 35,
+        width: 75,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#eda62b',
+    }
 });
 
 export default FirstFeedback;
