@@ -25,8 +25,8 @@
        <StatusBar barStyle='light-content' />
        <View style={styles.container}>
        <ImageBackground source={require('./images/bg.jpg')} resizeMode="cover" style={styles.image}>
-       <Card />
-        {/* <Feedback /> */}
+       {/* <Card /> */}
+        <Feedback />
        </ImageBackground>
 
        </View>
