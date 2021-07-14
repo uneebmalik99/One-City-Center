@@ -19,12 +19,16 @@
    ImageBackground,
    TouchableHighlight,
  } from 'react-native';
+ 
  import AppConstance, {
   deviceHeight,
   deviceWidth,
 } from '../../constance/AppConstance';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
+
 
  const MenuScreen = ({navigation}) => {
    return (
@@ -36,15 +40,55 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
     >
   <ScrollView style={styles.innercontainer1}>
       
-   <View style={styles.head}>
-      
-      <Text style={styles.head_text}>My Profile</Text>
-
-   </View>
+  
 
    <View style={styles.body}>
 
      <View style={styles.bodyitem}>
+          <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=>{  navigation.navigate('ProfileStack')}}
+          style={styles.box}>
+
+            <View style={styles.bodyitem_inner}>
+              <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
+              <MaterialCommunityIcons color='#ededed' name='account-circle-outline' size={40} style={{alignSelf:'center'}} />
+     
+              </View>
+
+                <Text style={[styles.bodyitem_inner_text,{color:'#ededed'}]}>Profile</Text>
+            </View>
+    
+          </TouchableHighlight>
+          <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=> {navigation.navigate('BuildingStack')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <FontAwesome color='#ededed' name='building-o' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Building</Text>
+            </View>
+              </TouchableHighlight>
+    
+           <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=> {navigation.navigate('BookingStack')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <MaterialCommunityIcons color='#ededed' name='calendar-clock' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Booking</Text>
+            </View>
+              </TouchableHighlight>
+    
+    </View>
+
+
+    <View style={styles.bodyitem}>
           <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
@@ -53,12 +97,11 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
             <View style={styles.bodyitem_inner}>
               <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
-              <MaterialCommunityIcons color='#BDBDBD' name='qrcode-scan' size={35} style={{alignSelf:'center'}} />
-              <Image style={{height:38, alignSelf:'center', width:38}} source={require('../../assets/icons/cellphone-wireless.png')} />
-             
+              <MaterialCommunityIcons color='#ededed' name='food-fork-drink' size={40} style={{alignSelf:'center'}} />
+     
               </View>
 
-                <Text style={[styles.bodyitem_inner_text,{color:'#BDBDBD'}]}>Access(QR / Mobile)</Text>
+                <Text style={[styles.bodyitem_inner_text,{color:'#ededed'}]}>Retail / F&B</Text>
             </View>
     
           </TouchableHighlight>
@@ -67,70 +110,121 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
           underlayColor="#ff9933"
           onPress={()=> {navigation.navigate('AccountInformation')}}
           style={styles.box}>
-            
-
           <View style={styles.bodyitem_inner}>
-                <MaterialCommunityIcons color='#BDBDBD' name='account-details' size={50} />
+                <MaterialCommunityIcons color='#ededed' name='room-service' size={40} />
 
-                <Text style={styles.bodyitem_inner_text}>Account Information</Text>
+                <Text style={styles.bodyitem_inner_text}>Concierge</Text>
             </View>
               </TouchableHighlight>
-     </View>
-
-     <View style={styles.bodyitem}>
-     <TouchableHighlight
+    
+           <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
-                    onPress={()=> {navigation.navigate('Activity')}}
-
+          onPress={()=> {navigation.navigate('AccountInformation')}}
           style={styles.box}>
           <View style={styles.bodyitem_inner}>
-                <MaterialIcons color='#BDBDBD' name='contact-page' size={50} />
+                <MaterialIcons color='#ededed' name='local-offer' size={40} />
 
-                <Text style={styles.bodyitem_inner_text}>Activity</Text>
+                <Text style={styles.bodyitem_inner_text}>Offers / Promotions</Text>
             </View>
-            </TouchableHighlight>
-            <TouchableHighlight
+              </TouchableHighlight>
+    
+    </View>
+
+
+
+
+    <View style={styles.bodyitem}>
+          <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
-          onPress={()=> {navigation.navigate('Rewardsandpoints')}}
+          onPress={()=>{  navigation.navigate('Access')}}
           style={styles.box}>
-          <View style={styles.bodyitem_inner}>
-          <MaterialCommunityIcons color='#BDBDBD' name='star-circle' size={50} />
-              <Text style={styles.bodyitem_inner_text}>Rewards/Points</Text>
-            </View>
-              
-          </TouchableHighlight>
-     </View>
 
-
-     <View style={styles.bodyitem}>
-     <TouchableHighlight
-          activeOpacity={0.1}
-          underlayColor="#ff9933"
-     onPress={()=> navigation.navigate('MyPreferences')}
-     style={styles.box}>
-          <View style={styles.bodyitem_inner}>
-            <Image style={{height:40, width:40}} source={require('../../assets/images/shield-account.png')} />
-                {/* <MaterialIcons color='grey' name='contact-page' size={50} /> */}
-
-                <Text style={styles.bodyitem_inner_text}>My preferences</Text>
-            </View>
-            </TouchableHighlight>
-            <TouchableHighlight
-          activeOpacity={0.1}
-          underlayColor="#ff9933" 
-          onPress={()=> {navigation.navigate('Termsandpolicy')}}
-          style={styles.box}>
-          <View style={styles.bodyitem_inner}>
-          <MaterialCommunityIcons color='#BDBDBD' name='star-circle' size={50} />
-              <Text style={styles.bodyitem_inner_text}>Terms & Policies</Text>
-            </View>
-              
-          </TouchableHighlight>
-      
-     </View>
+            <View style={styles.bodyitem_inner}>
+              <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
+              <MaterialCommunityIcons color='#ededed' name='calendar-star' size={40} style={{alignSelf:'center'}} />
      
+              </View>
+
+                <Text style={[styles.bodyitem_inner_text,{color:'#ededed'}]}>Events</Text>
+            </View>
+    
+          </TouchableHighlight>
+          <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=> {navigation.navigate('DirectoryStack')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <MaterialCommunityIcons color='#ededed' name='card-account-phone-outline' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Directory</Text>
+            </View>
+              </TouchableHighlight>
+    
+           <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          // onPress={()=> {navigation.navigate('AccountInformation')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <MaterialCommunityIcons color='#ededed' name='badge-account-horizontal' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Visitor Invite </Text>
+            </View>
+              </TouchableHighlight>
+    
+    </View>
+
+
+
+    <View style={styles.bodyitem}>
+          <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=>{  navigation.navigate('NoticesStack')}}
+          style={styles.box}>
+
+            <View style={styles.bodyitem_inner}>
+              <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
+              <MaterialCommunityIcons color='#ededed' name='bullhorn-outline' size={40} style={{alignSelf:'center'}} />
+     
+              </View>
+
+                <Text style={[styles.bodyitem_inner_text,{color:'#ededed'}]}>Notices</Text>
+            </View>
+    
+          </TouchableHighlight>
+          <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=> {navigation.navigate('ServiceStack')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <Entypo color='#ededed' name='tools' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Service Requests</Text>
+            </View>
+              </TouchableHighlight>
+    
+           <TouchableHighlight
+          activeOpacity={0.1}
+          underlayColor="#ff9933"
+          onPress={()=> {navigation.navigate('Feedback')}}
+          style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <MaterialCommunityIcons color='#ededed' name='clipboard-list-outline' size={40} />
+
+                <Text style={styles.bodyitem_inner_text}>Feedback / Survey</Text>
+            </View>
+              </TouchableHighlight>
+    
+    </View>
+
+
+
+    
    </View>
 
   </ScrollView>
@@ -163,23 +257,24 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
    },
    bodyitem_inner_text:{
     fontSize:14,
-    color:'#BDBDBD',
+    color:'#ededed',
     textAlign:'center'
    },
    bodyitem_inner:{
     flexDirection:'column',
     alignItems:'center',
-    height:'80%',
-    width:'85%',
+    height:'99%',
+    width:'99%',
     alignSelf:'center',
     justifyContent:'space-evenly'
    },
    box:{
-      backgroundColor:'#262626',
-      borderRadius:25,
-      height:deviceHeight*0.21,
-      width:'49%',
-      padding:10,
+      borderColor:'#ededed',
+      borderWidth:2.1,
+      borderRadius:18,
+      height:deviceHeight*0.15,
+      width:'32%',
+      padding:5,
       justifyContent:'center'
 
    },
@@ -187,7 +282,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
     flexDirection:'row',
     justifyContent:'space-between',
     width:'100%',
-    marginTop:10
+    marginTop:20
    },
    head_text:{
     color:'white',

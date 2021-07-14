@@ -98,13 +98,13 @@ import { TabView, SceneMap } from 'react-native-tab-view';
             <Tabs.Views>
               <Tabs.View >
                 
-              {/* <FlatList
+              <FlatList
                 contentInsetAdjustmentBehavior="automatic"
                 data={Activelist}
                 contentContainerStyle={{ width:'100%' ,marginBottom:200   }}
                 renderItem={renderlist1}
                 keyExtractor={(item,id) => id.toString()}
-                 />  */}
+                 /> 
 
 
 

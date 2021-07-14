@@ -22,15 +22,15 @@
  import AppConstance, {
   deviceHeight,
   deviceWidth,
-} from '../../constance/AppConstance';
+} from '../../../constance/AppConstance';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import QRCode from 'react-native-qrcode-svg';
 import { ProgressBar, Colors } from 'react-native-paper';
 import * as Progress from 'react-native-progress';
 
- const AccountInformation = ({navigation}) => {
+ const Booking = ({navigation}) => {
  
 
 
@@ -45,63 +45,18 @@ import * as Progress from 'react-native-progress';
        <StatusBar barStyle='light-content' />
        <SafeAreaView style={styles.maincontainer}>
     
-       <ImageBackground source={require('../../assets/images/bg2.jpeg')} 
+       <ImageBackground source={require('../../../assets/images/bg2.jpeg')} 
     style={styles.Bg}
     >
   <ScrollView style={styles.innercontainer1}>
       
    <View style={styles.head}>
       
-      <Text style={styles.head_text}>Account Information</Text>
+      <Text style={styles.head_text}>Booking</Text>
 
    </View>
 
-      <View style={styles.body}>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>First Name</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>Last Name</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>Email Name</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>Mobile Number</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>Company Name</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={styles.body_item}>
-          <Text style={styles.Txt}>Building</Text>
-          <TextInput  style={styles.Text_input}/>
-        </View>
-
-        <View style={[styles.body_item,{flexDirection:'row',marginTop:20, justifyContent:'space-between'}]}>
-          <TouchableOpacity style={styles.btn}>
-            <Text style={[styles.Txt,{fontSize:17, fontWeight:'bold'}]} >Edit</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.btn ,{backgroundColor:'#00cc66'}]}>
-            <Text style={[styles.Txt,{fontSize:17, fontWeight:'bold'}]}  >Save</Text>
-          </TouchableOpacity>
-      
-        </View>
-
-   <View style={{height:100}}>
-
-   </View>
-      </View>
+   
   </ScrollView>
      
     </ImageBackground>
@@ -117,9 +72,17 @@ import * as Progress from 'react-native-progress';
     width:deviceWidth,
   },
   Txt:{
-    color:'white',
-    fontSize:16,
+    color:'#ECF0F1',
+    fontSize:15,
     alignSelf:'center'
+  },
+  line:{
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    opacity:0.95,
+    height:1,
+    marginTop:5,
+    width: '100%',
   },
   btn:{
     backgroundColor:'#d09e01',
@@ -130,13 +93,15 @@ import * as Progress from 'react-native-progress';
     justifyContent:'center'
   },
   body_item:{
-    marginTop:10,
+    marginTop:15,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    width:'100%'
   },
   Text_input:{
     backgroundColor:'#D0D3D4',
     borderRadius:10,
     fontWeight:'600',
-    paddingVertical:3,
     borderColor:'#626567',
     borderWidth:0.7,
     marginTop:5,
@@ -175,7 +140,8 @@ import * as Progress from 'react-native-progress';
    body:{
       marginTop:30,
       width:'100%',
-   
+      paddingHorizontal:5,
+    alignItems:'center'
       
    },
    bodyitem_inner_text:{
@@ -219,6 +185,6 @@ import * as Progress from 'react-native-progress';
   
  });
  
- export default AccountInformation;
+ export default Booking;
  
  

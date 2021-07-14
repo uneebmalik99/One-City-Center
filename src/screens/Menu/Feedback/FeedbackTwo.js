@@ -11,9 +11,8 @@ import SelectDropdown from 'react-native-select-dropdown'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-const FeedbackOne = ({navigation})  => {
+const FeedbackTwo = ({navigation})  => {
     const [selectedValue, setSelectedValue] = useState(" ");
-    const [toggle , settoggle] = useState(0)
     const countries = ["QR Code Access", "Mobile Access"]
 
     return (
@@ -32,78 +31,28 @@ const FeedbackOne = ({navigation})  => {
 
    </View>
        
-
-{toggle == 0?
-       <View style={{backgroundColor:'white', width:'95%',paddingHorizontal:20,paddingVertical:10, alignSelf:'center'}}>
-         <Text style={{marginTop:20,}}>Your Feedback will help us decide
-                    what improvements should be made to our platform to provide the
-                    best user experience.{'\n \n'}Please take a minute to comment
-                    on your experience with us to date</Text>
-
-
-          <Text style={{marginTop:10, fontWeight:'700', alignSelf:'center'}}>Topic</Text>
-          <SelectDropdown
-	data={countries}
-  buttonStyle={{backgroundColor:'white',borderWidth:1, borderRadius:5,width:'100%'}}
-  buttonTextStyle={styles.head_text}
-	onSelect={(selectedItem, index) => {
-		console.log(selectedItem, index)
-	}}
-   defaultValueByIndex={0} 
-   renderDropdownIcon={() => {
-    return (
-      <FontAwesome name="chevron-down" color={"#0009"} size={18} />
-    );
-  }}
-  dropdownIconPosition={"right"}
-   // use default value by index or default value
-	buttonTextAfterSelection={(selectedItem, index) => {
-    console.log(selectedItem +'---'+ index);
-   
-		// text represented after item is selected
-		// if data array is an array of objects then return selectedItem.property to render after item is selected
-		return selectedItem
-	}}
-	rowTextForSelection={(item, index) => {
-		// text represented for each item in dropdown
-		// if data array is an array of objects then return item.property to represent item in dropdown
-		return item
-	}}
-/>
-
-<Text style={{marginTop:10, fontWeight:'700', alignSelf:'center'}}>Feedback</Text>
-
-  <View style={{borderWidth:1, borderRadius:20,height:deviceHeight*0.3, padding:10,}}>
-  <TextInput  multiline={true}/>
-  </View>
+       <View style={{backgroundColor:'white',height:deviceHeight*0.75, width:'95%',paddingHorizontal:20,paddingVertical:10, alignSelf:'center'}}>
+         <Text style={{marginTop:20,}}>Thank you for your Valueable Feedback.{'\n'}
+                your Opinions and comments are very
+                important to us. We really appreciate
+                the time you tookto help us improve
+                in order to serve you better</Text>
 
 
-<TouchableOpacity 
-onPress={()=> settoggle(1)}
-style={{alignSelf:'center',backgroundColor:'#ff9933',borderRadius:10,alignItems:'center', padding:8,width:'35%', marginTop:10,}}>
-  <Text style={{color:'white'}}>Submit</Text>
-</TouchableOpacity>
+      
+
+
+
+
+
 
 <View style={{height:50}}>
 
 </View>
        </View>
        
-      :
-
-      <View style={{backgroundColor:'white',height:deviceHeight, width:'95%',paddingHorizontal:20,paddingVertical:10, alignSelf:'center'}}>
-      <Text style={{marginTop:20,}}>Thank you for your Valueable Feedback.{'\n'}
-      your Opinions and comments are very
-      important to us. We really appreciate
-      the time you tookto help us improve
-      in order to serve you better</Text>
-
-
-
-    </View>
+       
     
-     
-}
 
   </ScrollView>
      
@@ -225,4 +174,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default FeedbackOne;
+export default FeedbackTwo;

@@ -5,10 +5,12 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  Image
 } from 'react-native';
 //import {deviceHeight, deviceWidth} from '../../constance/AppConstance';
 import bg2 from "../../../assets/images/splash2.png"
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 
@@ -20,33 +22,55 @@ const RegisterOne = ({navigation}) => {
     <Text  style={styles.regText}>Registration</Text>
   </View>
   <View style={styles.regBtnVw}>
-    <TouchableOpacity 
-    onPress={()=> {navigation.navigate('RegisterTwo')}}
-    style={[styles.regBtn,{backgroundColor:'#7f7f7f'}]}>
+
+
+    
+    <TouchableOpacity   
+        onPress={()=> {navigation.navigate('RegisterTwo')}}
+
+    style={[styles.regBtn, {backgroundColor:'#7f7f7f'}]}>
+    <View style={styles.item_left}> 
+    <MaterialCommunityIcons color='#ededed' name='account-circle-outline' size={40} style={{alignSelf:'center'}} />
+
+    </View>
       <View style={styles.regBtnCnt}>
         <Text style={styles.regBtnIcn}></Text>
-        <Text style={styles.regBtnTxt}>Create Account with email</Text>
+        <Text style={styles.regBtnTxt}>Continue with facebook</Text>
       </View>
+   
     </TouchableOpacity>
 
-    <TouchableOpacity 
-    onPress={()=> {alert('demo app')}}
+    <TouchableOpacity   
+        onPress={()=> {alert('Service Unavailable                                  \'demo Mobile App \'')}}
+
     style={styles.regBtn}>
+    <View style={styles.item_left}> 
+    <Image style={styles.img}  source={require('../../../assets/images/facebook3.png')}/>
+
+    </View>
       <View style={styles.regBtnCnt}>
         <Text style={styles.regBtnIcn}></Text>
-        <Text style={styles.regBtnTxt}>Continue with Facebook</Text>
+        <Text style={styles.regBtnTxt}>Continue with facebook</Text>
       </View>
+   
     </TouchableOpacity>
 
-    <TouchableOpacity 
-        onPress={()=> {alert('demo app')}}
+
+    <TouchableOpacity  
+        onPress={()=> {alert('Service Unavailable                                  \'demo Mobile App \'')}}
 
     style={styles.regBtn}>
+    <View style={styles.item_left}> 
+    <Image style={styles.img}  source={require('../../../assets/images/search.png')}/>
+
+    </View>
       <View style={styles.regBtnCnt}>
         <Text style={styles.regBtnIcn}></Text>
-        <Text style={styles.regBtnTxt}>Continue with Gmail</Text>
+        <Text style={styles.regBtnTxt}>Continue with Google</Text>
       </View>
+   
     </TouchableOpacity>
+    
 
   </View>
 </ImageBackground>
@@ -63,6 +87,11 @@ const styles = StyleSheet.create({
     width: '100%',
 
   },
+  img:{
+    width:'100%', 
+    height:'100%' ,
+     resizeMode:'center'
+  },
   image: {
     flex: 1,
     justifyContent: "center"
@@ -72,6 +101,10 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     alignContent:'center'
 
+  },
+  item_left:{
+    width:'15%', 
+    justifyContent:'center'
   },
   regText:{
     fontSize:30,
@@ -84,10 +117,14 @@ const styles = StyleSheet.create({
 
   },
   regBtnTxt:{
-    fontSize:20,
+    fontSize:18,
     color:'white',
     marginLeft:8
 
+  },
+  icon:{
+    height:40,
+    width:'10%'
   },
   regBtnIcn:{
     fontSize:20,
@@ -98,13 +135,15 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     alignSelf:'center',
+    width:'80%'
   },
   regBtn:{
-    borderColor:'white',
+    borderColor:'#7f7f7f',
     borderWidth:0.7,
     borderRadius:10,
     height:60,
-    marginTop:30,
+    flexDirection:'row',
+    marginTop:20,
     justifyContent:'center',
     backgroundColor:null
     

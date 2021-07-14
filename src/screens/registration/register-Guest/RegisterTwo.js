@@ -7,6 +7,7 @@ import {
   TextInput,
   ImageBackground,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 //import {deviceHeight, deviceWidth} from '../../constance/AppConstance';
 import bg2 from "../../../assets/images/splash2.png"
@@ -17,12 +18,15 @@ const RegisterTwo = ({navigation})  => {
   return (
 <SafeAreaView style={styles.container}>
 <ImageBackground source={bg2} resizeMode="cover" style={styles.image}>
-<View style={styles.regView}>
+
+  <ScrollView style={{marginTop:40,}}>
+  <View style={styles.regView}>
     <Text  style={styles.regText}>Registration</Text>
   </View>
   <View style={styles.regBtnVw}>
   <Text style={styles.regBtnTxt}>First Name</Text>   
-   <TextInput style={styles.regBtn}></TextInput>
+   <TextInput      autoFocus={true}
+ style={styles.regBtn}></TextInput>
 
    <Text style={styles.regBtnTxt}>Last Name</Text>   
    <TextInput style={styles.regBtn}></TextInput>
@@ -42,6 +46,10 @@ const RegisterTwo = ({navigation})  => {
     </View>
 
   </View>
+
+  </ScrollView>
+  
+
 </ImageBackground>
   
 </SafeAreaView>
@@ -61,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   regView:{
-    marginTop:150,
+    marginTop:80,
     alignSelf:'center',
     alignContent:'center'
 
@@ -73,7 +81,7 @@ const styles = StyleSheet.create({
   },
   regBtnVw:{
     paddingTop:5,
-    marginTop:5,
+    marginTop:15,
     marginHorizontal:30,
 
   },
@@ -85,11 +93,13 @@ const styles = StyleSheet.create({
 
   },
   regBtn:{
-    borderColor:'white',
+    borderColor:'#7f7f7f',
     borderWidth:1,
     borderRadius:7,
     marginTop:2,
-    height:50,
+    color:'white',
+    height:40,
+    paddingVertical:0,
     marginBottom:10,
   },
   regBtnNxtCont:{

@@ -27,7 +27,7 @@
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
- const Profile = ({navigation}) => {
+ const PaymentOne = ({navigation}) => {
    return (
      <>
        <StatusBar barStyle='light-content' />
@@ -36,42 +36,37 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
     style={styles.Bg}
     >
   <ScrollView style={styles.innercontainer1}>
-      
+
+
+   <View style={styles.body}>
+     
    <View style={styles.head}>
       
-      <Text style={styles.head_text}>My Profile</Text>
+      <Text style={styles.head_text}>Payments</Text>
 
    </View>
 
-   <View style={styles.body}>
-
-     <View style={styles.bodyitem}>
-          <TouchableHighlight
+     <View style={[styles.bodyitem,{marginTop:40}]}>
+     <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
-          onPress={()=>{  navigation.navigate('Access')}}
+          onPress={()=> {navigation.navigate('AccountInformation')}}
           style={styles.box}>
+          <View style={styles.bodyitem_inner}>
+                <MaterialCommunityIcons color='#BDBDBD' name='credit-card-scan' size={50} />
 
-            <View style={styles.bodyitem_inner}>
-              <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
-              <MaterialCommunityIcons color='#BDBDBD' name='qrcode-scan' size={35} style={{alignSelf:'center'}} />
-              <Image style={{height:38, alignSelf:'center', width:38}} source={require('../../assets/icons/cellphone-wireless.png')} />
-     
-              </View>
-
-                <Text style={[styles.bodyitem_inner_text,{color:'#BDBDBD'}]}>Access(QR / Mobile)</Text>
+                <Text style={styles.bodyitem_inner_text}>Scan to pay</Text>
             </View>
-    
-          </TouchableHighlight>
+              </TouchableHighlight>
           <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
           onPress={()=> {navigation.navigate('AccountInformation')}}
           style={styles.box}>
           <View style={styles.bodyitem_inner}>
-                <MaterialCommunityIcons color='#BDBDBD' name='account-details' size={50} />
+                <MaterialCommunityIcons color='#BDBDBD' name='bank' size={50} />
 
-                <Text style={styles.bodyitem_inner_text}>Account Information</Text>
+                <Text style={styles.bodyitem_inner_text}>Bank Transfer</Text>
             </View>
               </TouchableHighlight>
      </View>
@@ -80,13 +75,12 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
      <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
-                    onPress={()=> {navigation.navigate('Activity')}}
+                    onPress={()=> {navigation.navigate('CarparkPaymentStack')}}
 
           style={styles.box}>
           <View style={styles.bodyitem_inner}>
-                <MaterialIcons color='#BDBDBD' name='contact-page' size={50} />
-
-                <Text style={styles.bodyitem_inner_text}>Activity</Text>
+                <Image  style={{width:50,height:50}} source={require('../../assets/images/parking.png')}/>
+                <Text style={styles.bodyitem_inner_text}>Carpark Payment</Text>
             </View>
             </TouchableHighlight>
             <TouchableHighlight
@@ -95,38 +89,28 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
           onPress={()=> {navigation.navigate('Rewardsandpoints')}}
           style={styles.box}>
           <View style={styles.bodyitem_inner}>
-          <MaterialCommunityIcons color='#BDBDBD' name='star-circle' size={50} />
-              <Text style={styles.bodyitem_inner_text}>Rewards/Points</Text>
+          <MaterialCommunityIcons color='#BDBDBD' name='plus-circle-multiple' size={50} />
+              <Text style={styles.bodyitem_inner_text}>Subscription Fees</Text>
             </View>
               
           </TouchableHighlight>
      </View>
 
 
-     <View style={styles.bodyitem}>
+     <View style={styles.bodyitem,{alignItems:'center', marginTop:10}}>
      <TouchableHighlight
           activeOpacity={0.1}
           underlayColor="#ff9933"
      onPress={()=> navigation.navigate('MyPreferences')}
      style={styles.box}>
           <View style={styles.bodyitem_inner}>
-            <Image style={{height:40, width:40}} source={require('../../assets/images/shield-account.png')} />
+            <Image style={{height:40, width:40}} source={require('../../assets/images/credit.png')} />
                 {/* <MaterialIcons color='grey' name='contact-page' size={50} /> */}
 
-                <Text style={styles.bodyitem_inner_text}>My preferences</Text>
+                <Text style={styles.bodyitem_inner_text}>Transactions</Text>
             </View>
             </TouchableHighlight>
-            <TouchableHighlight
-          activeOpacity={0.1}
-          underlayColor="#ff9933" 
-          onPress={()=> {navigation.navigate('Termsandpolicy')}}
-          style={styles.box}>
-          <View style={styles.bodyitem_inner}>
-          <MaterialCommunityIcons color='#BDBDBD' name='playlist-check' size={50} />
-              <Text style={styles.bodyitem_inner_text}>Terms & Policies</Text>
-            </View>
-              
-          </TouchableHighlight>
+            
       
      </View>
      
@@ -158,7 +142,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
      alignItems:'center',    
    },
    body:{
-      marginTop:30
+      marginTop:10
    },
    bodyitem_inner_text:{
     fontSize:14,
@@ -177,7 +161,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
       backgroundColor:'#262626',
       borderRadius:25,
       height:deviceHeight*0.21,
-      width:'49%',
+      width:'48%',
       padding:10,
       justifyContent:'center'
 
@@ -200,6 +184,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
   
  });
  
- export default Profile;
+ export default PaymentOne;
  
  

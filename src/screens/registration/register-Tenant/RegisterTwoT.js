@@ -46,7 +46,10 @@ const RegisterTwoT =  ({navigation}) => {
   <View style={styles.regBtnVw}>
 
   <Text style={styles.regBtnTxt}>Mobile Number</Text>   
-   <TextInput style={styles.regBtn}></TextInput>
+   <TextInput
+   placeholder='TH +66'
+   placeholderTextColor='white'
+   style={styles.regBtn}></TextInput>
 
 
   <Text style={styles.regBtnTxt}>Building</Text>   
@@ -174,7 +177,9 @@ const styles = StyleSheet.create({
     borderWidth:1,
     borderRadius:7,
     height:50,
+    padding:10,
     marginTop:5,
+    fontSize:18,
     color:'white',
     marginBottom:10,
   },

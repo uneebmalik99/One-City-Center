@@ -55,13 +55,7 @@
 
             </TouchableOpacity>
       </View>
-        <TouchableOpacity
-        onPress={()=>{navigation.navigate('HomeScreen')}}
-        >
-            <Text>
-                Home
-            </Text>
-        </TouchableOpacity>
+        
 
        
 

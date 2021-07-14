@@ -4,9 +4,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  TouchableHighlight,
   Text,
-  TextInput,
   StatusBar,
   TouchableOpacity,
   ImageBackground,
@@ -21,26 +19,20 @@ import { Tabs, NativeBaseProvider,Box,Heading, Center } from 'native-base';
 import Feather from 'react-native-vector-icons/Feather';
 import prof from "../../assets/images/prof.jpg"
 
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
 
-const Message = ({navigation}) => {
+
+const Message2 = ({navigation}) => {
 
 const[msg,setmsg]=useState(false)
  const [progress , setprogress] =useState(0)
  const [indeterminate , setindeterminate] =useState(true)
- const [toggle , settoggle] = useState(0)
  const [index, setIndex] = React.useState(0);
  const [Activelist , setActivelist] = useState([
   
       {id:1},
       {id:2},
-      {id:3},
-      {id:3},
       {id:3},
       {id:3},
       {id:3}
@@ -183,26 +175,31 @@ useEffect(() => {
 
   function TabComponent() {
     return (
-        <Tabs  colorScheme='rgb( 82, 190, 128)'  isFitted align="center" size="md" my={1}>
+        <Tabs  colorScheme='rgb(82, 190, 128)'  isFitted align="center" size="md" my={1}>
           <Tabs.Bar>
             <Tabs.Tab style={styles.tabTxt}>Chats</Tabs.Tab>
             <Tabs.Tab style={styles.tabTxt}>Notificatons</Tabs.Tab>
           </Tabs.Bar>
           <Tabs.Views>
             <Tabs.View >
-              {msg==false ? (<FlatList
+              {/* {msg==false ?  */}
+              {/* <FlatList
                contentInsetAdjustmentBehavior="automatic"
                data={Activelist}
                contentContainerStyle={{ width:'100%' ,  }}
                renderItem={rendermsg}
                keyExtractor={(item,id) => id.toString()}
-              />):(<FlatList
+              />
+              : */}
+              <FlatList
                contentInsetAdjustmentBehavior="automatic"
                data={InActivelist}
                contentContainerStyle={{ width:'100%' ,  }}
                renderItem={rendermsglist}
                keyExtractor={(item,id) => id.toString()}
-              />)}
+              />
+              
+              {/* } */}
               {/* <FlatList
                contentInsetAdjustmentBehavior="automatic"
                data={Activelist}
@@ -241,83 +238,22 @@ useEffect(() => {
 
         {/* <ScrollView> */}
 
-          <View 
-          // onPress={()=> navigation.navigate('Messages2')}
+          <TouchableOpacity
+          onPress={()=> navigation.navigate('Messages2')}
           style={styles.headCnt}>
             <Text style={styles.headTxt}>Messages</Text>
 
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.navView}>
-{/* 
+
           <NativeBaseProvider>
 
 <TabComponent />
 
 
-</NativeBaseProvider> */}
-   <View style={{flexDirection:'row', width:'100%'}}>
-    <TouchableHighlight
-    onPress={()=> {if(toggle == 1 ){settoggle(0) ; setmsg(false)}else{setmsg(false)} toggle == 1 ?  settoggle(0)  :null}}
-    style={{borderBottomWidth:2,alignItems:'center',borderColor:toggle==0? 'white' : 'black', paddingVertical:10, width:'50%'}}>
-        <Text style={{fontWeight:'700',color:toggle==0? 'white' : 'black',}}>Chats</Text>
-    </TouchableHighlight>
-
-
-    <TouchableHighlight
-        onPress={()=> {toggle == 0 ? settoggle(1) :null}}
-
-    style={{borderBottomWidth:2,borderColor:toggle==1? 'white' : 'black',  alignItems:'center',paddingVertical:10,width:'50%'}}>
-        <Text style={{fontWeight:'700',color:toggle==1? 'white' : 'black', }}>Notificatons</Text>
-    </TouchableHighlight>
-
-</View>
-
-
-{toggle == 0 ?
-<ScrollView style={{width:'95%' ,height:'100%'}}>
-<View style={{marginTop:10,alignSelf:'center', width:'100%', }}> 
-
-
-
-
-
-
-{msg==false ? (<FlatList
-               contentInsetAdjustmentBehavior="automatic"
-               data={Activelist}
-               contentContainerStyle={{ width:'100%' ,  }}
-               renderItem={rendermsg}
-               keyExtractor={(item,id) => id.toString()}
-              />):(<FlatList
-               contentInsetAdjustmentBehavior="automatic"
-               data={InActivelist}
-               contentContainerStyle={{ width:'100%' ,  }}
-               renderItem={rendermsglist}
-               keyExtractor={(item,id) => id.toString()}
-              />)}
-
-<View style={{height:50}}>
-
-</View>
+</NativeBaseProvider>
    
-
-</View>
-
-</ScrollView>
-
-:
-
-<ScrollView style={{marginTop:10,width:'95%'}}>
-<View style={styles.cardView2}>
-               <Text style={styles.notifyTxt}>You have no new notificatons.</Text>
-               </View>
-    
-    
-
-</ScrollView>
-
-}
 
           </View>
 
@@ -392,9 +328,7 @@ fontSize:15
        backgroundColor:'#f2f2f2',
        justifyContent:'center',  
        borderRadius:10,
-       padding:20,
-       
-
+       padding:20
        
      },
      notifyTxt:{
@@ -436,5 +370,5 @@ color:'gray'
 
 });
 
-export default Message;
+export default Message2;
 

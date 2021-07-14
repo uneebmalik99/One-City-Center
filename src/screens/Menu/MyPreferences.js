@@ -24,11 +24,14 @@
   deviceWidth,
 } from '../../constance/AppConstance';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import FontAwesome5Brands from 'react-native- .vector-icons/FontAwesome5Brands';
 import LinearGradient from 'react-native-linear-gradient';
 import QRCode from 'react-native-qrcode-svg';
 import { ProgressBar, Colors } from 'react-native-paper';
 import * as Progress from 'react-native-progress';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
  const MyPreferences = ({navigation}) => {
  
@@ -56,10 +59,50 @@ import * as Progress from 'react-native-progress';
 
    </View>
 
-      <View style={styles.body}>
+      <View style={styles.body}>  
 
     
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <MaterialCommunityIcons color='#BDBDBD' name='bell-ring' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Notifications</Text>
 
+        </View>
+
+
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <MaterialIcons color='#BDBDBD' name='playlist-add-check' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Subscriptions</Text>
+
+        </View>
+
+
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <MaterialIcons color='#BDBDBD' name='facebook' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Facebook</Text>
+
+        </View>
+
+
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <MaterialCommunityIcons color='#BDBDBD' name='google' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Google</Text>
+
+        </View>
+
+
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <MaterialIcons color='#BDBDBD' name='payment' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Payment settings</Text>
+
+        </View>
+
+
+
+        <View style={{flexDirection:'row', width:'100%', marginTop:15,}}>
+        <Ionicons color='#BDBDBD' name='ios-reload-circle' size={35} style={{alignSelf:'center',}} />
+        <Text style={{alignSelf:'center',fontSize:16, color:'#BDBDBD',fontWeight:'700', marginLeft:15,}}>Erase & Reset Data</Text>
+
+        </View>
         
        
    <View style={{height:50}}>
@@ -149,7 +192,7 @@ import * as Progress from 'react-native-progress';
    body:{
       marginTop:30,
       width:'100%',
-      paddingHorizontal:5,
+      paddingHorizontal:20,
     alignItems:'center'
       
    },

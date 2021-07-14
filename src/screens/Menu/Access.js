@@ -152,13 +152,13 @@ style={{marginTop:10,}}  borderColor='#0001' unfilledColor='#E5E7E9'  width={120
    <View style={styles.datecontainer}>
 
       <Text style={styles.font_1}>Date</Text>
-      <Text style={styles.font_2}>05.07.2021</Text>
+      <Text style={[styles.font_2,{color:'#2d4369'}]}>05.07.2021</Text>
 
       <Text style={styles.font_1}>Time Access</Text>
-      <Text style={styles.font_2}>10:32</Text>
+      <Text style={[styles.font_2,{color:'#2d4369'}]}>10:32</Text>
 
       <Text style={styles.font_1}>Current Total Time</Text>
-      <Text style={styles.font_2}>32 MINS</Text>
+      <Text style={[styles.font_2 ,{color:'#2d4369'}]}>32 MINS</Text>
 
    </View>
 
