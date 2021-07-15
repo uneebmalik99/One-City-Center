@@ -47,6 +47,7 @@ import ServiceTR from '../screens/Menu/Services/ServiceTR';
 import ServiceRI from '../screens/Menu/Services/ServiceRI';
 import FreeWifi from '../screens/Home/FreeWifi';
 import Temperature from '../screens/Home/Temperature';
+import DirectoryTwo from '../screens/Menu/Directory/DirectoryTwo';
 
 
 
@@ -365,7 +366,26 @@ const DirectoryStack =() =>{
 <Stack.Screen name='Directory' component={Directory}
 options={{
   headerShown:false,
-  
+  animationEnabled:false,
+  transitionConfig: () => ({
+    transitionSpec: {
+      duration:0,
+      timing: 0,
+    },
+  }),
+}} 
+ />
+
+<Stack.Screen name='DirectoryTwo' component={DirectoryTwo}
+options={{
+  headerShown:false,
+  animationEnabled:false,
+  transitionConfig: () => ({
+    transitionSpec: {
+      duration:0,
+      timing: 0,
+    },
+  }),
 }} 
  />
 
