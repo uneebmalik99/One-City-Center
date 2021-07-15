@@ -286,7 +286,7 @@ useEffect(() => {
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  onPress={()=> {navigation.navigate('ServiceRI')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='dumbbell' size={40} />
@@ -392,7 +392,7 @@ useEffect(() => {
 <TouchableHighlight
 activeOpacity={0.1}
 underlayColor="#ff9933"
-// onPress={()=>{  navigation.navigate('Access')}}
+onPress={()=>{  navigation.navigate('ServiceRI',{'id':1})}}
 style={styles.box}>
 
 <View style={styles.bodyitem_inner}>

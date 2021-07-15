@@ -33,7 +33,10 @@ import CheckBox from '@react-native-community/checkbox';
 
 
 
-const ServiceRI = ({navigation}) => {
+const ServiceRI = ({route, navigation}) => {
+
+  const { id} = route.params;
+
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 const [submit , setsubmit] = useState(0)
 const countries = ['Report Issue',"Tennant Request"]
@@ -232,9 +235,19 @@ const rendermsglist = ({ item, index }) => {
 
 }
 
+// const u = () => {
+//   setava(id)
+
+// }
 
 useEffect(() => {
 
+// u()
+if(id == 1 ){
+setava(1)
+}else{
+  setava(0)
+}
 
   // animate()
   });
@@ -251,88 +264,8 @@ useEffect(() => {
           <Tabs.Views>
             <Tabs.View >
 
-{ava == 0 ?<ScrollView>
-
-         <TouchableOpacity style={{backgroundColor:'orange', justifyContent:'center',borderRadius:10, alignItems:'center', paddingVertical:7,}}>
-           <Text style={{color:'white'}}>Access</Text>
-         </TouchableOpacity>
-
-  <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
-      <Text style={{color:'#424949'}}>Comapny you work for</Text>
-      <TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
-    </View>
-
-    <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
-      <Text style={{color:'#424949'}}>Request</Text>
-      <TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
-    </View>
-
-    <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
-      <Text style={{color:'#424949'}}>Upload Photo</Text>
-      <TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
-    </View>   
-
-    <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
-      <Text style={{color:'#424949'}}>Comment</Text>
-      <TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
-    </View>  
-
-
-    <View style={styles.chkCont}>
-<CheckBox
-style={styles.chkBx}
-
-    disabled={false}
-    value={toggleCheckBox}
-    onValueChange={(newValue) => setToggleCheckBox(newValue)}
-  />
-
-<Text style={styles.chkTxt}>I require a quote before accepting any changes that may
-apply</Text>
-
-</View>
-
-<View style={styles.chkCont}>
-<CheckBox
-style={styles.chkBx}
-
-    disabled={false}
-    value={toggleCheckBox}
-    onValueChange={(newValue) => setToggleCheckBox(newValue)}
-  />
-
-<Text style={styles.chkTxt}>I accept any changes that may apply as per scheduled
-rates</Text>
-
-</View>
-                  <TouchableOpacity 
-                  onPress={()=> {setsubmit(1)}}
-                  style={styles.gymBtn}>
-                    <Text style={styles.gymBtnTxt}>Submit</Text>
-                  </TouchableOpacity>
-              
-<Text>
-
-</Text>
-<Text>
-  
-</Text><Text>
-  
-  </Text><Text>
-  
-  </Text><Text>
-  
-  </Text>
-  <Text>
-  
-</Text>
-<Text>
-  
-</Text>
-</ScrollView>
-
-:
-<ScrollView>
+{ava == 0 ?
+  <ScrollView>
  {submit == 0 ?
   <View >
 
@@ -393,6 +326,90 @@ issues” page.
   }
 
 </ScrollView>
+  
+
+:
+<ScrollView>
+
+<TouchableOpacity style={{backgroundColor:'orange', justifyContent:'center',borderRadius:10, alignItems:'center', paddingVertical:7,}}>
+  <Text style={{color:'white'}}>Access</Text>
+</TouchableOpacity>
+
+<View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
+<Text style={{color:'#424949'}}>Comapny you work for</Text>
+<TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
+</View>
+
+<View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
+<Text style={{color:'#424949'}}>Request</Text>
+<TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
+</View>
+
+<View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
+<Text style={{color:'#424949'}}>Upload Photo</Text>
+<TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
+</View>   
+
+<View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
+<Text style={{color:'#424949'}}>Comment</Text>
+<TextInput style={{borderRadius:10,borderWidth:1,paddingVertical:0, marginTop:5,width:'100%', borderColor:'#898989'}}/>
+</View>  
+
+
+<View style={styles.chkCont}>
+<CheckBox
+style={styles.chkBx}
+
+disabled={false}
+value={toggleCheckBox}
+onValueChange={(newValue) => setToggleCheckBox(newValue)}
+/>
+
+<Text style={styles.chkTxt}>I require a quote before accepting any changes that may
+apply</Text>
+
+</View>
+
+<View style={styles.chkCont}>
+<CheckBox
+style={styles.chkBx}
+
+disabled={false}
+value={toggleCheckBox}
+onValueChange={(newValue) => setToggleCheckBox(newValue)}
+/>
+
+<Text style={styles.chkTxt}>I accept any changes that may apply as per scheduled
+rates</Text>
+
+</View>
+         <TouchableOpacity 
+         onPress={()=> {setsubmit(1)}}
+         style={styles.gymBtn}>
+           <Text style={styles.gymBtnTxt}>Submit</Text>
+         </TouchableOpacity>
+     
+<Text>
+
+</Text>
+<Text>
+
+</Text><Text>
+
+</Text><Text>
+
+</Text><Text>
+
+</Text>
+<Text>
+
+</Text>
+<Text>
+
+</Text>
+</ScrollView>
+
+  
   }
           
 
@@ -450,7 +467,7 @@ issues” page.
 	onSelect={(selectedItem, index) => {
 		console.log(selectedItem, index)
 	}}
-   defaultValueByIndex={0} 
+   defaultValueByIndex={id} 
    renderDropdownIcon={() => {
     return (
       <FontAwesome name="chevron-down" color={"white"} size={18} />
@@ -463,9 +480,12 @@ issues” page.
     if(index == 0){
       setava(0)
       setsub(0)
+      // alert(selectedItem +'---'+ index)
     }else{
       setava(1)
       setsub(1)
+      // alert(selectedItem +'---'+ index)
+
 
     }
 		// text represented after item is selected
