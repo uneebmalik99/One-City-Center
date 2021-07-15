@@ -33,7 +33,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 
-const Directory =  ({navigation}) => {
+const DirectoryTwo =  ({navigation}) => {
 
   const [toggle , settoggle] = useState(0)
   const countries = ["Store directory", "Store directory2"]
@@ -164,9 +164,7 @@ const renderlist1 = ({ item, index }) => {
 
      
   return(
-  <TouchableOpacity 
-  onPress={()=> navigation.navigate('DirectoryTwo')}
-  style={{width:'100%' ,flexDirection:'row', borderBottomWidth:0.6, borderColor:'grey', marginTop:10, }}>
+  <TouchableOpacity style={{width:'100%' ,flexDirection:'row', borderBottomWidth:0.6, borderColor:'grey', marginTop:10, }}>
     <View style={{width:'25%'}}>
     <Image  style={{width:'100%', height:70 , resizeMode:'stretch'}} source={item.img}/>
     </View >
@@ -282,18 +280,39 @@ const renderlist1 = ({ item, index }) => {
       </TouchableOpacity>
       </View>
     </View> */}
+<View style={{marginTop:10,}}>
+  <Text style={{color:'orange',fontWeight:"bold", fontSize:16}}>Dining</Text>
+</View>
+<View style={{borderWidth:1,width:'20%',alignItems:'center', marginTop:20,}}>
+  <Image style={{width:50 ,height:50 }} source={require('../../../assets/images/dakasi.png')}/>
+</View>
+<Text style={{alignSelf:'flex-end'}}>02 105 4626</Text>
+<View style={{height:1, backgroundColor:'black', marginTop:10}}>
 
+</View>
 
+    <View
+    
+    >
+      <Text> Dakasai </Text>
+      <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+        <Text>Leve B1 | Zone H</Text>
+        <Text>location map</Text>
+      </View>
 
+      <Text style={{paddingHorizontal:5, marginTop:30, }}>All drinks at Dakasi are made with fresh ingredients with no
+artificial flavoring and little to no additives. We pride ourselves in
+our own recipes for cooking tea, pearls and sugar, guaranteeing a
+taste that cannot be found anywhere else.</Text>
+    </View>
 
-
-    <FlatList
+    {/* <FlatList
             contentInsetAdjustmentBehavior="automatic"
             data={Activelist}
             contentContainerStyle={{ width:'100%' ,marginLeft:5, paddingHorizontal:10,}}
             renderItem={renderlist1}
             keyExtractor={(item,id) => id.toString()}
-             />
+             /> */}
 
 <View style={{height:50}}>
 
@@ -634,4 +653,4 @@ marginTop:10,
 }
 );
 
-export default Directory;
+export default DirectoryTwo;
