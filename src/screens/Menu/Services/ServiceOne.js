@@ -254,7 +254,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=>{  navigation.navigate('Access')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Office'})}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -274,7 +274,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('DirectoryStack')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Restrooms'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='toilet' size={40} />
@@ -286,7 +286,7 @@ useEffect(() => {
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  onPress={()=> {navigation.navigate('ServiceRI',{'id':0})}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Gym'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='dumbbell' size={40} />
@@ -301,7 +301,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=>{  navigation.navigate('Access')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Elevator'})}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -317,7 +317,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('DirectoryStack')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Carpark'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='parking' size={40} />
@@ -329,7 +329,7 @@ useEffect(() => {
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('AccountInformation')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Garden'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='tree' size={40} />
@@ -344,7 +344,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=>{  navigation.navigate('Access')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Public Area'})}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -360,7 +360,7 @@ useEffect(() => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('DirectoryStack')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Security'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='security' size={40} />
@@ -372,7 +372,7 @@ useEffect(() => {
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('AccountInformation')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':0,'name':'Others'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='dots-horizontal-circle' size={40} />
@@ -392,7 +392,7 @@ useEffect(() => {
 <TouchableHighlight
 activeOpacity={0.1}
 underlayColor="#ff9933"
-onPress={()=>{  navigation.navigate('ServiceRI',{'id':1})}}
+onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Co-working Space'})}}
 style={styles.box}>
 
 <View style={styles.bodyitem_inner}>
@@ -412,7 +412,7 @@ style={styles.box}>
 <TouchableHighlight
 activeOpacity={0.1}
 underlayColor="#ff9933"
-// onPress={()=> {navigation.navigate('DirectoryStack')}}
+onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Event Space'})}}
 style={styles.box}>
 <View style={styles.bodyitem_inner}>
 <MaterialCommunityIcons color='#717171' name='google-classroom' size={40} />
@@ -424,7 +424,7 @@ style={styles.box}>
 <TouchableHighlight
 activeOpacity={0.1}
 underlayColor="#ff9933"
-// onPress={()=> {navigation.navigate('AccountInformation')}}
+onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Facilities'})}}
 style={styles.box}>
 <View style={styles.bodyitem_inner}>
 <MaterialCommunityIcons color='#717171' name='scooter' size={40} />
@@ -439,7 +439,7 @@ style={styles.box}>
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=>{  navigation.navigate('Access')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Parking'})}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -455,7 +455,7 @@ style={styles.box}>
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('DirectoryStack')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Service'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='face-agent' size={40} />
@@ -467,7 +467,7 @@ style={styles.box}>
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('AccountInformation')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Lost & Found'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='briefcase-search' size={40} />
@@ -483,7 +483,7 @@ style={styles.box}>
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=>{  navigation.navigate('Access')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Access'})}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -503,7 +503,7 @@ style={styles.box}>
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('DirectoryStack')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Security'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='security' size={40} />
@@ -515,7 +515,7 @@ style={styles.box}>
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  // onPress={()=> {navigation.navigate('AccountInformation')}}
+  onPress={()=> {navigation.navigate('ServiceRI',{'id':1,'name':'Others'})}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#717171' name='dots-horizontal-circle' size={40} />

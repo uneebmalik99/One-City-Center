@@ -59,8 +59,7 @@ const[msg,setmsg]=useState(false)
    const [InActivelist , setInActivelist] = useState([
   
      {id:1},
-     {id:2},
-     {id:3},
+   
 
   ])
  const [routes] = React.useState([

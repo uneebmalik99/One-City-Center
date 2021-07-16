@@ -35,7 +35,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 const ServiceRI = ({route, navigation}) => {
 
-  const { id} = route.params;
+  const { id, name} = route.params;
 
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 const [submit , setsubmit] = useState(0)
@@ -270,7 +270,7 @@ useEffect(() => {
   <View >
 
 <TouchableOpacity style={{backgroundColor:'orange', justifyContent:'center',borderRadius:10, alignItems:'center', paddingVertical:7,}}>
-           <Text style={{color:'white'}}>GYM</Text>
+           <Text style={{color:'white'}}>{name}</Text>
          </TouchableOpacity>
 
   <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
@@ -332,7 +332,7 @@ issues” page.
 <ScrollView>
 
 <TouchableOpacity style={{backgroundColor:'orange', justifyContent:'center',borderRadius:10, alignItems:'center', paddingVertical:7,}}>
-  <Text style={{color:'white'}}>Access</Text>
+  <Text style={{color:'white'}}>{name}</Text>
 </TouchableOpacity>
 
 <View style={{justifyContent:'center',marginTop:8, alignItems:'center',width:'100%', paddingHorizontal:10,}}>
