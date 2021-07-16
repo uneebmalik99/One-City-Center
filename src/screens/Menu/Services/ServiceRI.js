@@ -243,11 +243,11 @@ const rendermsglist = ({ item, index }) => {
 useEffect(() => {
 
 // u()
-if(id == 1 ){
-setava(1)
-}else{
-  setava(0)
-}
+// if(id == 1 ){
+// setava(1)
+// }else{
+//   setava(0)
+// }
 
   // animate()
   });
@@ -480,11 +480,15 @@ rates</Text>
     if(index == 0){
       setava(0)
       setsub(0)
-      // alert(selectedItem +'---'+ index)
+      // navigation.navigate('ServiceOne')
+      // alert(selectedItem +'---'+ index+'-----'+ava)
     }else{
       setava(1)
       setsub(1)
+      // alert(selectedItem +'---'+ index+'-----'+ava)
+
       // alert(selectedItem +'---'+ index)
+      // navigation.navigate('ServiceOne')
 
 
     }

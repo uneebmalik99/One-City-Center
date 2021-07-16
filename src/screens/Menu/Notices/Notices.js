@@ -41,8 +41,9 @@ const Notices =  ({navigation}) => {
     },
     {
       name:'Filming',
-      name:''
-    }
+      description:'Depaul University Studios will be filming a short film titled Building 57 from :',
+      points:''
+        }
  ])
 const [routes] = React.useState([
 { key: 'first', title: 'Active' },
@@ -83,8 +84,8 @@ const renderlist2 = ({ item, index }) => {
      <View style={styles.listdesign2}>
 
        
-        
-  
+        <Text>{item.name}</Text>
+  <Text></Text>
      </View>
   );
 
@@ -150,14 +151,89 @@ function TabComponent() {
 <View style={{height:'100%', borderWidth:0.3,borderColor:'grey', borderTopWidth:0,  }}>
   <View style={{paddingVertical:10,paddingHorizontal:12, height:'100%'}}>
 
-  <FlatList
+  {/* <FlatList
             contentInsetAdjustmentBehavior="automatic"
             data={Activelist}
-            numColumns={3}
             contentContainerStyle={{ width:'100%' ,marginLeft:5, paddingHorizontal:10,}}
             renderItem={renderlist2}
             keyExtractor={(item,id) => id.toString()}
              />
+              */}
+
+
+<View style={styles.listdesign2}>
+  <View style={{width:'90%'}}>
+  <Text style={{color:'grey',fontWeight:'bold'}}>Covid-19 Precautions
+
+
+
+</Text>
+
+<Text style={{marginTop:5, color:'grey'}}>
+we recommend all tenants to practice the following
+precautions to limit the spread of COVID-19
+</Text>
+<View style={{flexDirection: 'row', marginTop:5,}}>
+      <Text>{'\u2022'}</Text>
+      <Text style={{flex: 1,color:'grey', paddingLeft: 5}}>Wash your hands thoroughly</Text>
+    </View>
+
+    <View style={{flexDirection: 'row'}}>
+      <Text>{'\u2022'}</Text>
+      <Text style={{flex: 1,color:'grey', paddingLeft: 5}}>Practice social distancing</Text>
+    </View>
+    
+    <View style={{flexDirection: 'row'}}>
+      <Text>{'\u2022'}</Text>
+      <Text style={{flex: 1, color:'grey', paddingLeft: 5}}>If sick, stay home from work</Text>
+    </View>
+
+
+    <View style={{flexDirection: 'row'}}>
+      <Text>{'\u2022'}</Text>
+      <Text style={{flex: 1,color:'grey', paddingLeft: 5}}>If sick, call provincial hotline +get tested</Text>
+    </View>
+
+
+
+
+
+  </View>
+ 
+ <View style={{justifyContent:'center', alignItems:'center', width:'10%'}}>
+ <MaterialIcons color='grey' name='navigate-next' size={30} style={{alignSelf:'center',}} />
+
+ </View>
+</View>      
+
+
+
+<View style={{flexDirection:'row', padding:10,backgroundColor:'white', marginTop:10,borderRadius:20}}>
+ <View style={{width:'90%',}}>
+   <Text style={{fontWeight:'bold', color:'grey'}}>Filming Notice</Text>
+
+   <Text style={{marginTop:5,color:'grey'}}>Depaul University Studios will be filming a short film titled
+Building 57 from</Text>
+
+
+<Text style={{fontWeight:'bold', marginTop:5 ,color:'grey'}}>Saturday, 17 July – Sunday, 18 July 2021
+
+Level 1, Zone A</Text>
+<Text style={{marginTop:5,fontSize:12 ,color:'grey'}}>The area will be closed to public access and we wish to</Text>
+ </View>
+ <View style={{width:'10%', justifyContent:'center'}}>
+ <MaterialIcons color='grey' name='navigate-next' size={30} style={{alignSelf:'center',}} />
+
+ </View>
+</View>
+
+
+
+
+
+
+
+
 
   </View>
 </View>
@@ -259,9 +335,10 @@ listdesign:{
 listdesign2:{
 padding:10,
 width:'100%',
+backgroundColor:'white',
 marginTop:10,
-borderRadius:10,
-
+borderRadius:25,
+flexDirection:'row'
 },
 regView:{
     

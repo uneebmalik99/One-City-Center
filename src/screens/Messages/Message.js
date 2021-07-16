@@ -37,13 +37,24 @@ const[msg,setmsg]=useState(false)
  const [index, setIndex] = React.useState(0);
  const [Activelist , setActivelist] = useState([
   
-      {id:1},
-      {id:2},
-      {id:3},
-      {id:3},
-      {id:3},
-      {id:3},
-      {id:3}
+      {
+        name:'Bloom flower boutique',
+        short_description:'Your flowers are ready for…today',
+        img:require('../../assets/images/pinkrose.png')
+      },
+
+      {
+        name:'BarBar',
+        short_description:'Hi,booking for 8pax confirm..Jul 1',
+        img:require('../../assets/images/laundromat.jpeg')
+      },
+
+      {
+        name:'Laundromat King',
+        short_description:'We have sent your laund-.Jun 20',
+        img:require('../../assets/images/laundromat.jpeg')
+
+      }
    ])
    const [InActivelist , setInActivelist] = useState([
   
@@ -96,12 +107,12 @@ const rendermsg = ({ item, index }) => {
       onPress={()=> setmsg(!msg)}>      
        <View style={styles.profileCol}>
          {/* <MaterialCommunityIcons color='#ededed' name='face-profile' size={40} style={{alignSelf:'flex-start'}}></MaterialCommunityIcons> */}
-         <Image source={prof} style={{alignSelf:'flex-start',height: 60,
+         <Image source={item.img} style={{alignSelf:'flex-start',height: 60,
    width: 60,
    borderRadius: 30,}}></Image>
          <View style={styles.profileRow}>
-           <Text style={styles.profileText}>Bloom Flower Botique</Text>
-           <Text style={styles.profileText2}>Your flowers are ready for....today</Text>
+           <Text style={styles.profileText}>{item.name}</Text>
+           <Text style={styles.profileText2}>{item.short_description}</Text>
          </View>
 
        </View>
@@ -383,7 +394,8 @@ justifyContent:'center'
 
  },
  profileText:{
-fontSize:15
+fontSize:15,
+fontWeight:'bold'
  },
  profileText2:{
    fontSize:12,

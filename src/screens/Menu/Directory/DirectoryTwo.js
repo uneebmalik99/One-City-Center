@@ -33,10 +33,14 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 
-const DirectoryTwo =  ({navigation}) => {
+const DirectoryTwo =  ({route, navigation}) => {
+
+  const { item } = route.params;
 
   const [toggle , settoggle] = useState(0)
   const countries = ["Store directory", "Store directory2"]
+
+  
 
   const [Activelist , setActivelist] = useState([
     
@@ -129,73 +133,6 @@ const [routes] = React.useState([
 
 
 
-const renderlist2 = ({ item, index }) => {
-
-     
-  return(
-    <View style={[styles.bodyitem,{marginTop:15,}]}>
-    <TouchableHighlight
-    activeOpacity={0.1}
-    underlayColor="#ff9933"
-    // onPress={()=>{  navigation.navigate('Access')}}
-    style={styles.box}>
-
-      <View style={styles.bodyitem_inner}>
-        <View style={{flexDirection:'row',width:'99%', justifyContent:'space-evenly'}} >
-        <MaterialCommunityIcons color='grey' name='-outline' size={40} style={{alignSelf:'center'}} />
-
-        </View>
-
-          <Text style={[styles.bodyitem_inner_text,{color:'grey'}]}>{item.Category_name}</Text>
-      </View>
-
-    </TouchableHighlight>
-    
-</View>
-
-  )
-  ;
-
-
-
-}
-
-const renderlist1 = ({ item, index }) => {
-
-     
-  return(
-  <TouchableOpacity style={{width:'100%' ,flexDirection:'row', borderBottomWidth:0.6, borderColor:'grey', marginTop:10, }}>
-    <View style={{width:'25%'}}>
-    <Image  style={{width:'100%', height:70 , resizeMode:'stretch'}} source={item.img}/>
-    </View >
-
-
-    <View style={{width:'45%',alignItems:'center',justifyContent:'center', }}>
-    <Text style={{fontSize:13}}>
-      {item.Category_name}
-    </Text>
-    <Text style={{fontSize:13}}>
-     Level {item.Level} | {item.Zone}
-    </Text>
-    </View>
-
-
-    <View style={{width:'30%',justifyContent:'center',alignItems:'flex-end', }}> 
-      <Text style={{fontSize:12}}>
-        {item.date}
-
-        </Text>
-    </View>
-
-  </TouchableOpacity>
-  )
-  ;
-
-
-
-}
-
-
 
 
   return (
@@ -281,12 +218,13 @@ const renderlist1 = ({ item, index }) => {
       </View>
     </View> */}
 <View style={{marginTop:10,}}>
-  <Text style={{color:'orange',fontWeight:"bold", fontSize:16}}>Dining</Text>
+  <Text style={{color:'orange',fontWeight:"bold", fontSize:16}}>{item.Category_name}</Text>
 </View>
-<View style={{borderWidth:1,width:'20%',alignItems:'center', marginTop:20,}}>
-  <Image style={{width:50 ,height:50 }} source={require('../../../assets/images/dakasi.png')}/>
+<View style={{width:'25%',alignItems:'center', marginTop:20,}}>
+  <Image style={{width:'90%' ,height:50 ,  }}  resizeMethod='auto' resizeMode='stretch' 
+  source={item.img}/>
 </View>
-<Text style={{alignSelf:'flex-end'}}>02 105 4626</Text>
+<Text style={{alignSelf:'flex-end'}}>{item.date}</Text>
 <View style={{height:1, backgroundColor:'black', marginTop:10}}>
 
 </View>
@@ -294,9 +232,9 @@ const renderlist1 = ({ item, index }) => {
     <View
     
     >
-      <Text> Dakasai </Text>
+      <Text> {item.Category_name} </Text>
       <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-        <Text>Leve B1 | Zone H</Text>
+        <Text>Level {item.Level} | {item.Zone}</Text>
         <Text>location map</Text>
       </View>
 

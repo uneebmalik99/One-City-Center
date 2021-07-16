@@ -30,117 +30,73 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const Buidling =  ({navigation}) => {
 
 
-  const [Activelist , setActivelist] = useState([
+  const [Activelistinfo , setActivelistinfo] = useState([
     
     {id:1,
-    Name:'Winai Yoteying',
-    post:'Property Managment Exective',
-    domain:'',
-    Email:'',
-    Phone:'02 624 6471 􏰊􏰟􏰃 101',
-    web:'',
+   caption:'about one city center Bangkok',
+   descirption:'about one city center Bangkok, download brochure',
+    img:require('../../../assets/images/bulding1.png'),
 
     },
 
-    {id:1,
-      Name:'Winai Yoteying',
-      post:'Property Managment Exective',
-      domain:'',
-      Email:'',
-      Phone:'02 624 6471 􏰊􏰟􏰃 101',
-      web:'',
+    {id:2,
+      caption:'',
+   descirption:'about one city center Bangkok, download brochure',
+    img:require('../../../assets/images/buidling2.png'),
   
       },
 
-      {id:1,
-        Name:'Winai Yoteying',
-        post:'Property Managment Exective',
-        domain:'',
-        Email:'',
-        Phone:'02 624 6471 􏰊􏰟􏰃 101',
-        web:'',
+   
+       
+
     
-        },
-
-        {id:1,
-          Name:'Winai Yoteying',
-          post:'Property Managment Exective',
-          domain:'',
-          Email:'',
-          Phone:'02 624 6471 􏰊􏰟􏰃 101',
-          web:'',
-      
-          },
-
-
-          {id:1,
-            Name:'Winai Yoteying',
-            post:'Property Managment Exective',
-            domain:'',
-            Email:'',
-            Phone:'02 624 6471 􏰊􏰟􏰃 101',
-            web:'',
-        
-            },
-
-
-            {id:1,
-              Name:'Winai Yoteying',
-              post:'Property Managment Exective',
-              domain:'',
-              Email:'',
-              Phone:'02 624 6471 􏰊􏰟􏰃 101',
-              web:'',
-          
-              },
-
-
-              {id:1,
-                Name:'Winai Yoteying',
-                post:'Property Managment Exective',
-                domain:'',
-                Email:'',
-                Phone:'02 624 6471 􏰊􏰟􏰃 101',
-                web:'',
-            
-                },
-
-
-                {id:1,
-                  Name:'Winai Yoteying',
-                  post:'Property Managment Exective',
-                  domain:'',
-                  Email:'',
-                  Phone:'02 624 6471 􏰊􏰟􏰃 101',
-                  web:'',
-              
-                  },
-
-
-                  {id:1,
-                    Name:'Winai Yoteying',
-                    post:'Property Managment Exective',
-                    domain:'',
-                    Email:'',
-                    Phone:'02 624 6471 􏰊􏰟􏰃 101',
-                    web:'',
-                
-                    },
-
-                    {id:1,
-                      Name:'Winai Yoteying',
-                      post:'Property Managment Exective',
-                      domain:'',
-                      Email:'',
-                      Phone:'02 624 6471 􏰊􏰟􏰃 101',
-                      web:'',
-                  
-                      },
-
-
 
     
  ])
+
+ const [Activelistcontact , setActivelistcontact] = useState([
+    
+  {id:1,
+  Name:'Winai Yoteying',
+  post:'Property Managment Exective',
+  domain:'',
+  Email:'winai.yoteying@occ.com',
+  Phone:'02 624 6471 ext 101',
+  web:'Winai.occ',
+  img:require('../../../assets/images/profile1.png'),
+
+  },
+
+  {id:2,
+    Name:'Taradol Piyachanya',
+    post:'Events & Space Director',
+    domain:'',
+    Email:'taradol.piyachanya@occ.com',
+    Phone:'02 624 6471 ext 105',
+    web:'taradol.occ',
+    img:require('../../../assets/images/profile2.png'),
+
+
+    },
+
+    {id:3,
+      Name:'Surat Mananitham',
+      post:'Technical Director',
+      domain:'',
+      Email:'Surat.manaitham@occ.com',
+      Phone:'02 624 6471 ext 110',
+      web:'Surat.occ',
+      img:require('../../../assets/images/profile3.png'),
+
+  
+      },
+
+     
+
+  
+
+  
+])
 const [routes] = React.useState([
 { key: 'first', title: 'Active' },
 { key: 'second', title: 'UpComing' },
@@ -155,12 +111,12 @@ const [routes] = React.useState([
      
     return(
        <View style={styles.listdesign}>
-<ImageBackground source={require('../../../assets/images/p12-greer-bangkok-a-20191102.jpeg')} resizeMode="cover" style={{width:'100%', height:deviceHeight*0.25}}>
-<Text style={{margin:10,color:'white',width:'50%'}}>About one city center Bangkok</Text>
+<ImageBackground source={item.img} resizeMode="cover" style={{width:'100%', height:deviceHeight*0.25}}>
+<Text style={{margin:10,color:'white',width:'50%', fontWeight:'bold'}}>{item.caption}</Text>
 
   </ImageBackground>
 <Text style={{marginTop:7,paddingHorizontal:5,}}>
-  about one city center Bangkok, download brochure
+{item.descirption}
 </Text>
 
 <TouchableOpacity style={{backgroundColor:'#feb871',alignItems:'center',marginTop:5, paddingVertical:4, borderRadius:5,}}>
@@ -177,12 +133,12 @@ const renderlist2 = ({ item, index }) => {
 
      
   return(
-     <View style={styles.listdesign2}>
+     <View  style={styles.listdesign2}>
 
         <View style={{width:'70%', padding:5,}}>
           <View style={{height:'40%',justifyContent:'space-evenly',}}>
           <Text  style={{fontSize:12}}>{item.Name}</Text>
-    <Text style={{fontSize:12}}>Propert Management Executive</Text>
+    <Text style={{fontSize:12}}>{item.post}</Text>
           </View>
    
     <View style={{height:1,backgroundColor:'grey',marginTop:5, width:'100%'}}>
@@ -194,21 +150,21 @@ const renderlist2 = ({ item, index }) => {
    <View style={{flexDirection:'row', marginTop:5,}}>
     <MaterialCommunityIcons color='#BDBDBD' name='email' size={12} style={{alignSelf:'center',}} />
 
-    <Text style={{marginLeft:5}} >{item.Name}</Text>
+    <Text style={{marginLeft:5, fontSize:12}} >{item.Email}</Text>
 
     </View>
 
     <View style={{flexDirection:'row', marginTop:5,}}>
     <MaterialCommunityIcons color='#BDBDBD' name='phone' size={12} style={{alignSelf:'center',}} />
 
-    <Text style={{marginLeft:5}} >021 87575  99 </Text>
+    <Text style={{marginLeft:5, fontSize:12}} >{item.Phone}</Text>
 
     </View>
 
     <View style={{flexDirection:'row'}}>
     <MaterialCommunityIcons color='#BDBDBD' name='qrcode-scan' size={12} style={{alignSelf:'center',}} />
 
-    <Text style={{marginLeft:5}} >.occ</Text>
+    <Text style={{marginLeft:5, fontSize:12}} >{item.web}</Text>
 
     </View>
 
@@ -222,7 +178,7 @@ const renderlist2 = ({ item, index }) => {
       </View>
 
         <View style={{width:'30%'}}>
-      <Image  style={{ width:'100%',resizeMode:'stretch', height:'100%'}} source={require('../../../assets/images/persone2.jpeg')}/>
+      <Image  style={{ width:'100%', height:'100%'}} source={item.img}/>
    
         </View>
   
@@ -245,8 +201,8 @@ function TabComponent() {
             
           <FlatList
             contentInsetAdjustmentBehavior="automatic"
-            data={Activelist}
-            contentContainerStyle={{ width:'100%' ,marginBottom:200   }}
+            data={Activelistinfo}
+            contentContainerStyle={{ width:'100%' ,paddingBottom:110   }}
             renderItem={renderlist1}
             keyExtractor={(item,id) => id.toString()}
              /> 
@@ -254,15 +210,12 @@ function TabComponent() {
 
 
 
-<View style={{height:200}}>  
-
-</View>
           </Tabs.View>
           <Tabs.View>
           <FlatList
             contentInsetAdjustmentBehavior="automatic"
-            data={Activelist}
-            contentContainerStyle={{ width:'100%' ,   }}
+            data={Activelistcontact}
+            contentContainerStyle={{ width:'100%' ,  paddingBottom:100, }}
             renderItem={renderlist2}
             keyExtractor={(item,id) => id.toString()}
              />
@@ -398,11 +351,12 @@ listdesign:{
 },
 listdesign2:{
 padding:5,
-borderWidth:1,
+borderWidth:2,
+
 width:'100%',
 marginTop:10,
 height:deviceHeight*0.24,
-borderColor:'#424949',
+borderColor:'grey',
 flexDirection:'row',
 },
 regView:{

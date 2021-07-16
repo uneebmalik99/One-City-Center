@@ -165,7 +165,7 @@ const renderlist1 = ({ item, index }) => {
      
   return(
   <TouchableOpacity 
-  onPress={()=> navigation.navigate('DirectoryTwo')}
+  onPress={()=> navigation.navigate('DirectoryTwo',{'item': item})}
   style={{width:'100%' ,flexDirection:'row', borderBottomWidth:0.6, borderColor:'grey', marginTop:10, }}>
     <View style={{width:'25%'}}>
     <Image  style={{width:'100%', height:70 , resizeMode:'stretch'}} source={item.img}/>

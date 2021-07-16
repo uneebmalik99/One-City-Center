@@ -39,13 +39,176 @@ import { TabView, SceneMap } from 'react-native-tab-view';
    const [progress , setprogress] =useState(0)
    const [indeterminate , setindeterminate] =useState(true)
    const [index, setIndex] = React.useState(0);
+
+   const [Pointsused , setPointsused] = useState([
+    
+    {
+      date: '6 Jul 2021',
+      day:'Tue',
+      item: [
+        {
+        time:'09:03 AM',
+        name:'Starbucks',
+        points:'-30',
+
+      },
+      {
+        time:'12:03 AM',
+        name:'Sukishi Delivery',
+        points:'-15',
+
+      }
+    ]
+    },
+
+    {
+      date: ' Jul 2021',
+      day:'Mon',
+      item: [
+        {
+        time:'08:56 AM',
+        name:'Starbucks',
+        points:'-10',
+
+      },
+      
+    ]
+    },
+
+
+    {
+      date: '01 Jun 2021',
+      day:'Thurs',
+      item: [
+        {
+        time:'12:00 PM',
+        name:'Mochi Mochi',
+        points:'-30',
+
+      },
+      {
+        time:'16:18 PM',
+        name:'Goose Café Delivery',
+        points:'-10',
+
+      },
+      
+    ]
+    },
+
+    {
+      date: '29 Jun 2021',
+      day:'Tues',
+      item: [
+        {
+        time:'08:45 AM',
+        name:'Starbucks',
+        points:'-10',
+
+      },
+      {
+        time:'13:30 PM',
+        name:'Delivery Service',
+        points:'-20',
+
+      }
+      
+    ]
+    },
+    
+ ])
    const [Activelist , setActivelist] = useState([
     
-        {id:1},
-        {id:2},
-        {id:3},
-        {id:3},
-        {id:3}
+        {
+          date: '6 Jul 2021',
+          day:'Tue',
+          item: [
+            {
+            time:'11:01 AM',
+            name:'Laundromat',
+            points:'+20',
+
+          },
+          {
+            time:'11:20 AM',
+            name:'Dakasi',
+            points:'+10',
+
+          }
+        ]
+        },
+
+        {
+          date: '6 Jul 2021',
+          day:'Mon',
+          item: [
+            {
+            time:'08:56 AM',
+            name:'Starbucks',
+            points:'+15',
+
+          },
+          
+        ]
+        },
+
+
+        {
+          date: '30 Jun 2021',
+          day:'Wed',
+          item: [
+            {
+            time:'12:30 PM',
+            name:'Bar-B-Q Plaza',
+            points:'+15',
+
+          },
+          {
+            time:'13:30 PM',
+            name:'Starbucks',
+            points:'+15',
+
+          },
+          
+        ]
+        },
+
+
+        {
+          date: '30 Jun 2021',
+          day:'Wed',
+          item: [
+            {
+            time:'13:30 PM',
+            name:'Starbucks',
+            points:'+15',
+
+          },
+          
+        ]
+        },
+
+
+        {
+          date: '29 Jun 2021',
+          day:'Mon',
+          item: [
+            {
+            time:'10:05 AM',
+            name:'B2B',
+            points:'+30',
+
+          },
+          {
+            time:'10:30 AM',
+            name:'Daiso',
+            points:'+10',
+
+          }
+          
+        ]
+        },
+        
      ])
    const [routes] = React.useState([
     { key: 'first', title: 'Active' },
@@ -59,20 +222,23 @@ import { TabView, SceneMap } from 'react-native-tab-view';
     return(
        <View style={styles.listdesign}>
           <View style={styles.listdesign_item_1}>
-            <Text style={styles.listdesign_item_1_txt}>Tue, 6 jul 2021</Text>
+            <Text style={styles.listdesign_item_1_txt}>{item.day}, {item.date}</Text>
           </View>
 
           <View style={styles.listdesign_item_2}>
             <View style={styles.listdesign_item_1_2}> 
-              <Text style={styles.listdesign_item_1_txt}>11:01 AM</Text>
-              <Text style={styles.listdesign_item_1_txt}>Laundromat</Text>
-              <Text style={styles.listdesign_item_1_txt}>+20</Text>
+              <Text style={styles.listdesign_item_1_txt}>{item.item[0].time}</Text>
+              <Text style={styles.listdesign_item_1_txt}>{item.item[0].name}</Text>
+              <Text style={styles.listdesign_item_1_txt}>{item.item[0].points}</Text>
             </View>
+
+            { item.item.length > 1 ?
             <View style={styles.listdesign_item_1_2}> 
-              <Text style={styles.listdesign_item_1_txt}>11:01 AM</Text>
-              <Text style={styles.listdesign_item_1_txt}>Laundromat</Text>
-              <Text style={styles.listdesign_item_1_txt}>+20</Text>
+              <Text style={styles.listdesign_item_1_txt}>{item.item[1].time}</Text>
+              <Text style={styles.listdesign_item_1_txt}>{ item.item[1].name }</Text>
+              <Text style={styles.listdesign_item_1_txt}>{item.item[1].points}</Text>
             </View>
+  :null}
            
           </View>
        </View>
@@ -96,28 +262,23 @@ import { TabView, SceneMap } from 'react-native-tab-view';
               <Tabs.Tab>Points used</Tabs.Tab>
             </Tabs.Bar>
             <Tabs.Views>
-              <Tabs.View >
-                
+              <Tabs.View  >
               <FlatList
-                contentInsetAdjustmentBehavior="automatic"
-                data={Activelist}
-                contentContainerStyle={{ width:'100%' ,marginBottom:200   }}
-                renderItem={renderlist1}
-                keyExtractor={(item,id) => id.toString()}
-                 /> 
+            contentInsetAdjustmentBehavior="automatic"
+            data={Activelist}
+            contentContainerStyle={{ width:'100%' , paddingBottom:270,   }}
+            renderItem={renderlist1}
+            keyExtractor={(item,id) => id.toString()}
+             />     
 
+             
 
-
-
-  <View style={{height:200}}>  
-
-  </View>
               </Tabs.View>
               <Tabs.View>
               <FlatList
                 contentInsetAdjustmentBehavior="automatic"
-                data={Activelist}
-                contentContainerStyle={{ width:'100%' ,   }}
+                data={Pointsused}
+                contentContainerStyle={{ width:'100%' ,  paddingBottom:270 }}
                 renderItem={renderlist1}
                 keyExtractor={(item,id) => id.toString()}
                  />
@@ -199,6 +360,7 @@ import { TabView, SceneMap } from 'react-native-tab-view';
   listdesign_item_1_2:{
     flexDirection:'row',
     marginTop:5,
+    paddingHorizontal:5,
     justifyContent:'space-between'
   },
   listdesign_item_1:{
@@ -231,6 +393,7 @@ import { TabView, SceneMap } from 'react-native-tab-view';
   },
   listdesign_item_2:{
     marginVertical:5,
+    paddingHorizontal:10,
   },
   body_item_1_txt:{
     color:'white'

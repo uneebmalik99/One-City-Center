@@ -125,7 +125,7 @@ const rendermsg = ({ item, index }) => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  onPress={()=>{  navigation.navigate('Access')}}
+  // onPress={()=>{  navigation.navigate('Access')}}
   style={styles.box}>
 
     <View style={styles.bodyitem_inner}>
@@ -141,7 +141,7 @@ const rendermsg = ({ item, index }) => {
   <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  onPress={()=> {navigation.navigate('DirectoryStack')}}
+  // onPress={()=> {navigation.navigate('DirectoryStack')}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#ededed' name='card-account-phone-outline' size={40} />
@@ -153,7 +153,7 @@ const rendermsg = ({ item, index }) => {
    <TouchableHighlight
   activeOpacity={0.1}
   underlayColor="#ff9933"
-  onPress={()=> {navigation.navigate('AccountInformation')}}
+  // onPress={()=> {navigation.navigate('AccountInformation')}}
   style={styles.box}>
   <View style={styles.bodyitem_inner}>
         <MaterialCommunityIcons color='#ededed' name='newspaper-variant-outline' size={40} />
